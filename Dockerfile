@@ -24,13 +24,19 @@ RUN apt-get update && apt-get install -y \
     && a2enmod rewrite \
     && rm -rf /var/lib/apt/lists/*
 
-# Set Apache document root to Laravel public folder
+# Laravel public folder
 ENV APACHE_DOCUMENT_ROOT=/var/www/html/public
 
-RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' \
+# Configure Apache to use Laravel public folder
+RUN sed -ri -e "s!/var/www/html!${APACHE_DOCUMENT_ROOT}!g" \
     /etc/apache2/sites-available/*.conf \
     /etc/apache2/apache2.conf \
     /etc/apache2/conf-available/*.conf
+
+# Configure Apache to listen on port 10000
+RUN sed -ri 's/^Listen 80$/Listen 10000/' /etc/apache2/ports.conf \
+    && sed -ri 's/<VirtualHost \*:80>/<VirtualHost *:10000>/' \
+    /etc/apache2/sites-available/*.conf
 
 # Install Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
@@ -49,14 +55,17 @@ RUN composer install \
     --no-interaction
 
 # Laravel permissions
-RUN chown -R www-data:www-data /var/www/html/storage \
+RUN chown -R www-data:www-data \
+    /var/www/html/storage \
     /var/www/html/bootstrap/cache
 
-# Laravel production settings
+# Clear Laravel cache
 RUN php artisan config:clear \
     && php artisan route:clear \
     && php artisan view:clear
 
+# Render port
 EXPOSE 10000
 
-CMD ["apache2-foreground"]
+# Run database migration, then start Apache
+CMD ["sh", "-c", "php artisan migrate --force && apache2-foreground"]
