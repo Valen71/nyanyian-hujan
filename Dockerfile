@@ -1,6 +1,6 @@
 FROM php:8.4-apache
 
-# Install system dependencies
+# Install dependencies
 RUN apt-get update && apt-get install -y \
     git \
     unzip \
@@ -27,22 +27,28 @@ RUN apt-get update && apt-get install -y \
 # Laravel public folder
 ENV APACHE_DOCUMENT_ROOT=/var/www/html/public
 
-# Configure Apache to use Laravel public folder
+# Configure Apache document root
 RUN sed -ri -e "s!/var/www/html!${APACHE_DOCUMENT_ROOT}!g" \
     /etc/apache2/sites-available/*.conf \
     /etc/apache2/apache2.conf \
     /etc/apache2/conf-available/*.conf
 
-# Configure Apache to listen on port 10000
-RUN sed -ri 's/^Listen 80$/Listen 10000/' /etc/apache2/ports.conf \
+# Apache port
+RUN sed -ri 's/^Listen 80$/Listen 10000/' \
+    /etc/apache2/ports.conf \
     && sed -ri 's/<VirtualHost \*:80>/<VirtualHost *:10000>/' \
     /etc/apache2/sites-available/*.conf
+
+# Make sure only one Apache MPM is enabled
+RUN a2dismod mpm_event mpm_worker mpm_prefork || true \
+    && a2enmod mpm_prefork
 
 # Install Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
-# Copy project
 WORKDIR /var/www/html
+
+# Copy Laravel project
 COPY . .
 
 # Aiven MySQL SSL certificate
@@ -64,8 +70,7 @@ RUN php artisan config:clear \
     && php artisan route:clear \
     && php artisan view:clear
 
-# Render port
 EXPOSE 10000
 
-# Run database migration, then start Apache
+# Run migration then start Apache
 CMD ["sh", "-c", "php artisan migrate --force && apache2-foreground"]
