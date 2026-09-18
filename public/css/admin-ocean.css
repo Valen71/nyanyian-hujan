@@ -1,0 +1,1153 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root {
+    --navy: #06101f;
+    --navy-2: #09192c;
+    --navy-3: #0c2036;
+    --aqua: #42ddff;
+    --aqua-2: #00d9ff;
+    --white: #ffffff;
+    --text: rgba(255,255,255,.76);
+    --muted: rgba(255,255,255,.45);
+    --border: rgba(255,255,255,.09);
+    --glass: rgba(255,255,255,.045);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif !important;
+    color: var(--white) !important;
+
+    background:
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(0,217,255,.09),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 85%,
+            rgba(0,140,255,.07),
+            transparent 30%
+        ),
+        var(--navy) !important;
+
+    min-height: 100vh;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    background:
+        rgba(6, 16, 31, .86) !important;
+
+    border-bottom: 1px solid var(--border) !important;
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    box-shadow: 0 10px 35px rgba(0,0,0,.16);
+
+    padding: 18px 32px !important;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif !important;
+    color: #ffffff !important;
+    font-size: 22px !important;
+    font-weight: 600 !important;
+    letter-spacing: 2px !important;
+}
+
+.logo span {
+    color: var(--aqua) !important;
+}
+
+.role {
+    color: var(--muted) !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 11px !important;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+    width: min(1200px, calc(100% - 40px));
+    margin: 40px auto !important;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    margin-bottom: 22px !important;
+}
+
+.header h1 {
+    font-family: 'Playfair Display', serif !important;
+    color: #ffffff !important;
+    font-size: 30px !important;
+    font-weight: 600 !important;
+    margin: 14px 0 7px !important;
+}
+
+.header p {
+    color: var(--muted) !important;
+    font-size: 12px !important;
+    line-height: 1.7;
+}
+
+.back {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px;
+
+    padding: 9px 14px !important;
+
+    background: rgba(255,255,255,.04) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 10px !important;
+
+    color: #dffaff !important;
+    text-decoration: none !important;
+
+    font-size: 11px !important;
+    font-weight: 600 !important;
+
+    transition:
+        transform .25s ease,
+        background .25s ease,
+        border-color .25s ease;
+}
+
+.back:hover {
+    background: rgba(0,217,255,.07) !important;
+    border-color: rgba(0,217,255,.20) !important;
+    color: #ffffff !important;
+
+    transform: scale(1.01);
+}
+
+/* =========================
+   GLASS CARD
+========================= */
+
+.card,
+.table-wrapper,
+.content-card,
+.form-card,
+.message-card,
+.ad-card,
+.user-card {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.055),
+            rgba(255,255,255,.022)
+        ) !important;
+
+    border: 1px solid var(--border) !important;
+
+    border-radius: 18px !important;
+
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.18),
+        inset 0 1px 0 rgba(255,255,255,.025);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+/* =========================
+   FORM
+========================= */
+
+input,
+textarea,
+select {
+    width: 100%;
+
+    padding: 12px 14px !important;
+
+    background: rgba(255,255,255,.045) !important;
+    color: #ffffff !important;
+
+    border: 1px solid rgba(255,255,255,.09) !important;
+    border-radius: 10px !important;
+
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 12px !important;
+
+    outline: none;
+
+    transition:
+        border-color .2s ease,
+        box-shadow .2s ease,
+        background .2s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: rgba(255,255,255,.30) !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: rgba(0,217,255,.45) !important;
+
+    background: rgba(0,217,255,.035) !important;
+
+    box-shadow:
+        0 0 0 3px rgba(0,217,255,.08) !important;
+}
+
+select option {
+    background: #0b1728;
+    color: #ffffff;
+}
+
+label {
+    color: rgba(255,255,255,.60) !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+}
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-form {
+    display: flex !important;
+    align-items: center;
+    gap: 10px !important;
+
+    padding: 18px !important;
+
+    background: transparent !important;
+    border-bottom: 1px solid var(--border) !important;
+}
+
+.search-form input {
+    flex: 1;
+}
+
+.search-form select {
+    width: auto;
+    min-width: 150px;
+}
+
+.search-form button {
+    border: 1px solid rgba(0,217,255,.15) !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #00d9ff,
+            #008cff
+        ) !important;
+
+    color: #04111f !important;
+
+    padding: 11px 18px !important;
+
+    border-radius: 10px !important;
+
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+
+    cursor: pointer;
+
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.search-form button:hover {
+    transform: scale(1.01);
+
+    box-shadow:
+        0 8px 24px rgba(0,217,255,.16);
+}
+
+.reset-btn {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 15px !important;
+
+    background: rgba(255,255,255,.04) !important;
+    border: 1px solid var(--border) !important;
+
+    color: rgba(255,255,255,.62) !important;
+
+    border-radius: 10px !important;
+
+    font-size: 11px !important;
+    text-decoration: none !important;
+}
+
+/* =========================
+   TABLE
+========================= */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+
+    background: transparent !important;
+}
+
+thead {
+    background: rgba(0,217,255,.055) !important;
+}
+
+thead th {
+    padding: 13px 15px !important;
+
+    color: rgba(255,255,255,.72) !important;
+
+    border-bottom: 1px solid var(--border) !important;
+
+    font-size: 10px !important;
+    font-weight: 600 !important;
+
+    letter-spacing: .5px;
+    text-transform: uppercase;
+
+    text-align: left;
+    white-space: nowrap;
+}
+
+tbody tr {
+    background: rgba(255,255,255,.012) !important;
+
+    transition: background .2s ease;
+}
+
+tbody tr:nth-child(even) {
+    background: rgba(255,255,255,.02) !important;
+}
+
+tbody tr:hover {
+    background: rgba(0,217,255,.045) !important;
+}
+
+tbody td {
+    padding: 13px 15px !important;
+
+    color: rgba(255,255,255,.66) !important;
+
+    border-bottom: 1px solid rgba(255,255,255,.055) !important;
+
+    font-size: 11px !important;
+}
+
+/* =========================
+   CODE
+========================= */
+
+.code,
+.booking-code {
+    color: var(--aqua) !important;
+    font-weight: 600 !important;
+}
+
+/* =========================
+   STATUS
+========================= */
+
+.status,
+.booking-status {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+
+    padding: 6px 10px !important;
+
+    border-radius: 999px !important;
+
+    font-size: 9px !important;
+    font-weight: 600 !important;
+
+    border: 1px solid transparent !important;
+}
+
+.status.pending,
+.booking-status.pending {
+    background: rgba(255,193,7,.09) !important;
+    color: #ffd866 !important;
+    border-color: rgba(255,193,7,.13) !important;
+}
+
+.status.confirmed,
+.booking-status.confirmed {
+    background: rgba(59,130,246,.09) !important;
+    color: #76a8ff !important;
+    border-color: rgba(59,130,246,.13) !important;
+}
+
+.status.completed,
+.booking-status.completed {
+    background: rgba(34,197,94,.09) !important;
+    color: #62e99a !important;
+    border-color: rgba(34,197,94,.13) !important;
+}
+
+.status.cancelled,
+.booking-status.cancelled {
+    background: rgba(239,68,68,.09) !important;
+    color: #ff8a8a !important;
+    border-color: rgba(239,68,68,.13) !important;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+button,
+.detail-btn,
+.btn,
+.action-btn {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+.detail-btn,
+.action-btn {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+
+    padding: 7px 11px !important;
+
+    background: rgba(0,217,255,.07) !important;
+    color: var(--aqua) !important;
+
+    border: 1px solid rgba(0,217,255,.15) !important;
+    border-radius: 9px !important;
+
+    font-size: 10px !important;
+    font-weight: 600 !important;
+
+    text-decoration: none !important;
+
+    transition: all .25s ease;
+}
+
+.detail-btn:hover,
+.action-btn:hover {
+    background: rgba(0,217,255,.12) !important;
+    color: #ffffff !important;
+
+    border-color: rgba(0,217,255,.25) !important;
+
+    transform: scale(1.01);
+}
+
+/* =========================
+   DANGER
+========================= */
+
+.delete-btn,
+.btn-danger,
+.danger {
+    background: rgba(239,68,68,.08) !important;
+    color: #ff8989 !important;
+
+    border: 1px solid rgba(239,68,68,.15) !important;
+
+    border-radius: 9px !important;
+}
+
+.delete-btn:hover,
+.btn-danger:hover,
+.danger:hover {
+    background: rgba(239,68,68,.14) !important;
+    color: #ffffff !important;
+}
+
+/* =========================
+   EMPTY
+========================= */
+
+.empty,
+.empty-booking {
+    padding: 45px !important;
+
+    text-align: center;
+
+    color: rgba(255,255,255,.32) !important;
+
+    font-size: 11px !important;
+}
+
+/* =========================
+   PAGINATION
+========================= */
+
+.pagination {
+    margin-top: 20px !important;
+}
+
+.pagination a,
+.pagination span {
+    background: rgba(255,255,255,.045) !important;
+    color: rgba(255,255,255,.68) !important;
+
+    border: 1px solid var(--border) !important;
+}
+
+/* =========================
+   LOGOUT
+========================= */
+
+.logout {
+    margin-top: 25px;
+}
+
+.logout button {
+    padding: 10px 16px !important;
+
+    background: rgba(239,68,68,.08) !important;
+    color: #ff8c8c !important;
+
+    border: 1px solid rgba(239,68,68,.15) !important;
+    border-radius: 9px !important;
+
+    font-size: 11px !important;
+    font-weight: 600 !important;
+
+    cursor: pointer;
+}
+
+.logout button:hover {
+    background: rgba(239,68,68,.14) !important;
+    color: #ffffff !important;
+}
+
+/* =========================
+   IMAGES / ADVERTISEMENT
+========================= */
+
+img {
+    border-radius: 12px;
+}
+
+.ad-card img,
+.card img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .container {
+        width: min(100% - 30px, 1200px);
+        margin: 28px auto !important;
+    }
+
+    .search-form {
+        flex-wrap: wrap;
+    }
+
+    .search-form input,
+    .search-form select {
+        width: 100%;
+        min-width: 100%;
+    }
+
+    .search-form button,
+    .reset-btn {
+        flex: 1;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 15px 18px !important;
+    }
+
+    .logo {
+        font-size: 19px !important;
+    }
+
+    .role {
+        display: none;
+    }
+
+    .container {
+        width: calc(100% - 24px);
+        margin: 22px auto !important;
+    }
+
+    .header h1 {
+        font-size: 25px !important;
+    }
+
+    .header p {
+        font-size: 10px !important;
+    }
+
+    .search-form {
+        padding: 14px !important;
+    }
+
+    .table-wrapper {
+        overflow-x: auto;
+    }
+
+    table {
+        min-width: 750px;
+    }
+}
+/* =====================================================
+   FINAL Nyanyian Hujan ADMIN OVERRIDE
+   Gunakan untuk mengalahkan CSS lama halaman admin
+===================================================== */
+
+html,
+body {
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(0,217,255,.08),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 90%,
+            rgba(0,120,255,.06),
+            transparent 32%
+        ),
+        #06101f !important;
+
+    color: #ffffff !important;
+}
+
+/* SEMUA TEKS UTAMA */
+body,
+.container,
+.card,
+.table-wrapper,
+.content-card,
+.form-card,
+.message-card,
+.ad-card,
+.user-card {
+    color: #ffffff !important;
+}
+
+/* PARAGRAF */
+p,
+.description,
+.subtitle,
+.info,
+.text-muted,
+small {
+    color: rgba(255,255,255,.52) !important;
+}
+
+/* JUDUL */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #ffffff !important;
+}
+
+/* LABEL */
+label,
+.form-label {
+    color: rgba(255,255,255,.68) !important;
+}
+
+/* CARD PUTIH LAMA */
+.card,
+.table-wrapper,
+.content-card,
+.form-card,
+.message-card,
+.ad-card,
+.user-card,
+.panel,
+.box,
+.section,
+.wrapper {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.055),
+            rgba(255,255,255,.022)
+        ) !important;
+
+    border-color: rgba(255,255,255,.09) !important;
+}
+
+/* TABLE */
+table {
+    background: transparent !important;
+    color: #ffffff !important;
+}
+
+thead {
+    background: rgba(0,217,255,.065) !important;
+}
+
+thead th {
+    background: transparent !important;
+    color: rgba(255,255,255,.78) !important;
+}
+
+tbody,
+tbody tr {
+    background: transparent !important;
+    color: rgba(255,255,255,.72) !important;
+}
+
+tbody tr:nth-child(even) {
+    background: rgba(255,255,255,.018) !important;
+}
+
+tbody tr:hover {
+    background: rgba(0,217,255,.055) !important;
+}
+
+tbody td {
+    color: rgba(255,255,255,.68) !important;
+    border-color: rgba(255,255,255,.055) !important;
+}
+
+/* INPUT */
+input,
+textarea,
+select {
+    background: #0b1728 !important;
+    color: #ffffff !important;
+    border-color: rgba(255,255,255,.10) !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: rgba(255,255,255,.30) !important;
+}
+
+select option {
+    background: #0b1728 !important;
+    color: #ffffff !important;
+}
+
+/* LINK */
+a {
+    color: #42ddff;
+}
+
+/* TOMBOL */
+button {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+/* BUTTON UTAMA */
+.btn,
+.btn-primary,
+.submit-btn,
+.save-btn,
+.search-form button {
+    background:
+        linear-gradient(
+            135deg,
+            #00d9ff,
+            #008cff
+        ) !important;
+
+    color: #04111f !important;
+
+    border-color: rgba(0,217,255,.20) !important;
+}
+
+/* BUTTON SEKUNDER */
+.btn-secondary,
+.reset-btn {
+    background: rgba(255,255,255,.045) !important;
+    color: rgba(255,255,255,.78) !important;
+    border-color: rgba(255,255,255,.10) !important;
+}
+
+/* STATUS */
+.status,
+.booking-status,
+.badge {
+    color: #ffffff !important;
+}
+
+/* TEKS KODE */
+.code,
+.booking-code {
+    color: #42ddff !important;
+}
+
+/* EMPTY */
+.empty,
+.empty-booking {
+    color: rgba(255,255,255,.35) !important;
+}
+
+/* PAGINATION */
+.pagination a,
+.pagination span {
+    background: rgba(255,255,255,.045) !important;
+    color: rgba(255,255,255,.72) !important;
+    border-color: rgba(255,255,255,.09) !important;
+}
+
+.pagination .active,
+.pagination span[aria-current="page"] {
+    background: rgba(0,217,255,.12) !important;
+    color: #42ddff !important;
+    border-color: rgba(0,217,255,.20) !important;
+}
+
+/* HR */
+hr {
+    border-color: rgba(255,255,255,.08) !important;
+}
+
+/* BACK / NAVIGATION */
+.back,
+.home-link {
+    color: #dffaff !important;
+    background: rgba(255,255,255,.04) !important;
+    border-color: rgba(255,255,255,.09) !important;
+}
+
+.back:hover,
+.home-link:hover {
+    color: #ffffff !important;
+    background: rgba(0,217,255,.07) !important;
+    border-color: rgba(0,217,255,.20) !important;
+}
+
+/* REMOVE WHITE INLINE-LIKE BOX EFFECT */
+[style*="background: white"],
+[style*="background:white"],
+[style*="background-color: white"],
+[style*="background-color:white"] {
+    background: #0b1728 !important;
+    color: #ffffff !important;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+
+    .container {
+        color: #ffffff !important;
+    }
+
+    h1 {
+        color: #ffffff !important;
+    }
+
+    p {
+        color: rgba(255,255,255,.50) !important;
+    }
+}
+/* =========================================================
+   FINAL TABLE FIX - Nyanyian Hujan ADMIN
+   ========================================================= */
+
+/* Wrapper tabel */
+.table-wrapper,
+.table-container,
+.table-responsive,
+.data-table-wrapper {
+    width: 100% !important;
+    overflow-x: auto !important;
+    background: rgba(8, 20, 35, 0.72) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 18px !important;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.14) !important;
+}
+
+/* Semua tabel */
+table,
+.booking-table,
+.data-table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    background: rgba(8, 20, 35, 0.82) !important;
+    color: #eaf6ff !important;
+    border: none !important;
+}
+
+/* Kepala tabel */
+table thead,
+.booking-table thead,
+.data-table thead {
+    background: rgba(0, 217, 255, 0.07) !important;
+}
+
+/* Header */
+table thead tr,
+.booking-table thead tr,
+.data-table thead tr {
+    background: rgba(0, 217, 255, 0.07) !important;
+}
+
+table th,
+.booking-table th,
+.data-table th {
+    background: rgba(0, 217, 255, 0.07) !important;
+    color: #7feaff !important;
+    border-bottom: 1px solid rgba(0, 217, 255, 0.18) !important;
+    padding: 15px 16px !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.8px !important;
+    text-transform: uppercase !important;
+    white-space: nowrap !important;
+}
+
+/* Isi tabel */
+table tbody,
+.booking-table tbody,
+.data-table tbody {
+    background: transparent !important;
+}
+
+table tbody tr,
+.booking-table tbody tr,
+.data-table tbody tr {
+    background: transparent !important;
+    color: #eaf6ff !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+    transition: background 0.2s ease !important;
+}
+
+/* Hover baris */
+table tbody tr:hover,
+.booking-table tbody tr:hover,
+.data-table tbody tr:hover {
+    background: rgba(0, 217, 255, 0.045) !important;
+}
+
+/* Cell */
+table td,
+.booking-table td,
+.data-table td {
+    background: transparent !important;
+    color: #dcecf5 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+    padding: 14px 16px !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 400 !important;
+    vertical-align: middle !important;
+}
+
+/* Teks tebal dalam tabel */
+table td strong,
+table td b,
+.booking-table td strong,
+.booking-table td b,
+.data-table td strong,
+.data-table td b {
+    color: #ffffff !important;
+}
+
+/* Link di dalam tabel */
+table td a:not(.btn):not(.detail-btn),
+.booking-table td a:not(.btn):not(.detail-btn),
+.data-table td a:not(.btn):not(.detail-btn) {
+    color: #55ddff !important;
+    text-decoration: none !important;
+}
+
+table td a:not(.btn):not(.detail-btn):hover,
+.booking-table td a:not(.btn):not(.detail-btn):hover,
+.data-table td a:not(.btn):not(.detail-btn):hover {
+    color: #ffffff !important;
+}
+
+/* Code / booking code */
+table .code,
+.booking-table .code,
+.data-table .code {
+    color: #63e5ff !important;
+    background: rgba(0, 217, 255, 0.08) !important;
+    border: 1px solid rgba(0, 217, 255, 0.12) !important;
+    padding: 5px 8px !important;
+    border-radius: 7px !important;
+}
+
+/* Jangan biarkan background putih dari CSS lama */
+table tr,
+table td,
+table th,
+.booking-table tr,
+.booking-table td,
+.booking-table th,
+.data-table tr,
+.data-table td,
+.data-table th {
+    box-shadow: none !important;
+}
+
+/* Select di tabel */
+table select,
+.booking-table select,
+.data-table select {
+    background: #0b1728 !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-radius: 9px !important;
+    padding: 8px 10px !important;
+}
+
+/* Input di tabel */
+table input,
+.booking-table input,
+.data-table input {
+    background: #0b1728 !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-radius: 9px !important;
+}
+
+/* Placeholder */
+table input::placeholder,
+.booking-table input::placeholder,
+.data-table input::placeholder {
+    color: rgba(255, 255, 255, 0.38) !important;
+}
+
+/* Status umum */
+.status {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 6px 10px !important;
+    border-radius: 999px !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    white-space: nowrap !important;
+}
+
+/* Pending */
+.status.pending {
+    background: rgba(245, 158, 11, 0.12) !important;
+    color: #fbbf24 !important;
+    border: 1px solid rgba(245, 158, 11, 0.18) !important;
+}
+
+/* Confirmed */
+.status.confirmed {
+    background: rgba(34, 197, 94, 0.12) !important;
+    color: #4ade80 !important;
+    border: 1px solid rgba(34, 197, 94, 0.18) !important;
+}
+
+/* Completed */
+.status.completed {
+    background: rgba(0, 217, 255, 0.10) !important;
+    color: #55ddff !important;
+    border: 1px solid rgba(0, 217, 255, 0.18) !important;
+}
+
+/* Cancelled */
+.status.cancelled {
+    background: rgba(239, 68, 68, 0.12) !important;
+    color: #f87171 !important;
+    border: 1px solid rgba(239, 68, 68, 0.18) !important;
+}
+
+/* Tombol aksi di tabel */
+table .detail-btn,
+table .btn,
+.booking-table .detail-btn,
+.booking-table .btn,
+.data-table .detail-btn,
+.data-table .btn {
+    border-radius: 9px !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+}
+
+/* Pagination */
+.pagination {
+    display: flex !important;
+    align-items: center !important;
+    gap: 7px !important;
+    margin-top: 18px !important;
+}
+
+.pagination a,
+.pagination span {
+    background: rgba(255, 255, 255, 0.04) !important;
+    color: #cfe8f1 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 9px !important;
+}
+
+.pagination a:hover {
+    background: rgba(0, 217, 255, 0.08) !important;
+    color: #ffffff !important;
+    border-color: rgba(0, 217, 255, 0.20) !important;
+}
+
+.pagination .active,
+.pagination .active span {
+    background: rgba(0, 217, 255, 0.14) !important;
+    color: #55ddff !important;
+    border-color: rgba(0, 217, 255, 0.25) !important;
+}
+
+/* Tabel kosong */
+.empty,
+.empty-state {
+    background: rgba(8, 20, 35, 0.72) !important;
+    color: rgba(255, 255, 255, 0.50) !important;
+    border: 1px solid rgba(255, 255, 255, 0.07) !important;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    table th,
+    table td,
+    .booking-table th,
+    .booking-table td,
+    .data-table th,
+    .data-table td {
+        padding: 12px 13px !important;
+        font-size: 12px !important;
+    }
+
+    table th,
+    .booking-table th,
+    .data-table th {
+        font-size: 10px !important;
+    }
+}

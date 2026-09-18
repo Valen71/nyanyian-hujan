@@ -1,0 +1,1022 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap');
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(0, 217, 255, 0.08),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at bottom right,
+            rgba(0, 119, 182, 0.08),
+            transparent 35%
+        ),
+        #06111f;
+
+    color: #f4fbff;
+}
+
+
+/* =========================================================
+   DASHBOARD
+========================================================= */
+
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.sidebar {
+    width: 250px;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    padding: 28px 18px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #071827 0%,
+            #06111f 100%
+        );
+
+    border-right: 1px solid rgba(255, 255, 255, 0.07);
+
+    color: #fff;
+
+    box-shadow:
+        18px 0 50px rgba(0, 0, 0, 0.16);
+
+    z-index: 100;
+}
+
+
+/* LOGO */
+
+.logo {
+    padding: 0 12px;
+    margin-bottom: 42px;
+}
+
+.logo h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 600;
+
+    color: #ffffff;
+
+    letter-spacing: 0.4px;
+}
+
+.logo span {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #6e8795;
+
+    font-size: 9px;
+    font-weight: 500;
+
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+}
+
+
+/* MENU TITLE */
+
+.menu-title {
+    margin: 0 12px 12px;
+
+    color: #526b7a;
+
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+}
+
+
+/* MENU */
+
+.menu {
+    list-style: none;
+}
+
+.menu li {
+    margin-bottom: 6px;
+}
+
+.menu a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 12px;
+
+    border: 1px solid transparent;
+    border-radius: 11px;
+
+    color: #91a6b3;
+
+    text-decoration: none;
+
+    font-size: 11px;
+    font-weight: 500;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.menu a:hover {
+    background: rgba(0, 217, 255, 0.06);
+    border-color: rgba(0, 217, 255, 0.10);
+
+    color: #dffaff;
+
+    transform: translateX(2px);
+}
+
+.menu a.active {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0, 217, 255, 0.12),
+            rgba(0, 119, 182, 0.08)
+        );
+
+    border-color: rgba(0, 217, 255, 0.18);
+
+    color: #73e6ff;
+
+    box-shadow:
+        inset 0 0 20px rgba(0, 217, 255, 0.025);
+}
+
+.menu-icon {
+    width: 22px;
+
+    text-align: center;
+
+    color: inherit;
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.main {
+    width: calc(100% - 250px);
+
+    margin-left: 250px;
+
+    padding: 32px;
+}
+
+
+/* =========================================================
+   TOPBAR
+========================================================= */
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 24px;
+
+    margin-bottom: 28px;
+}
+
+.topbar h1 {
+    margin-bottom: 6px;
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 30px;
+    font-weight: 600;
+
+    color: #ffffff;
+}
+
+.topbar p {
+    color: #8299a7;
+
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   ADMIN PROFILE
+========================================================= */
+
+.admin-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 9px 12px;
+
+    background: rgba(10, 27, 45, 0.82);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.18);
+}
+
+.avatar {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #00d9ff,
+            #0077b6
+        );
+
+    color: #04111d;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    box-shadow:
+        0 0 20px rgba(0, 217, 255, 0.20);
+}
+
+.admin-info strong {
+    display: block;
+
+    color: #ffffff;
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.admin-info span {
+    display: block;
+
+    margin-top: 2px;
+
+    color: #718896;
+
+    font-size: 9px;
+}
+
+
+.logout-btn {
+    border: 1px solid rgba(239, 68, 68, 0.22);
+    border-radius: 9px;
+
+    background: rgba(239, 68, 68, 0.07);
+
+    color: #fca5a5;
+
+    padding: 8px 12px;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.logout-btn:hover {
+    background: rgba(239, 68, 68, 0.14);
+
+    border-color: rgba(239, 68, 68, 0.35);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   STATISTICS
+========================================================= */
+
+.stats {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 24px;
+}
+
+.stat-card {
+    padding: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(12, 32, 51, 0.94),
+            rgba(7, 21, 36, 0.88)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+
+    border-radius: 17px;
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.025);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(0, 217, 255, 0.18);
+
+    box-shadow:
+        0 24px 55px rgba(0, 0, 0, 0.25),
+        0 0 24px rgba(0, 217, 255, 0.035);
+}
+
+.stat-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 18px;
+}
+
+.stat-title {
+    color: #8198a6;
+
+    font-size: 10px;
+    font-weight: 500;
+
+    letter-spacing: 0.3px;
+}
+
+.stat-icon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(0, 217, 255, 0.15);
+    border-radius: 12px;
+
+    background: rgba(0, 217, 255, 0.07);
+
+    color: #64e6ff;
+
+    font-size: 17px;
+}
+
+
+/* STATUS ICONS */
+
+.status-pending {
+    background: rgba(245, 158, 11, 0.08);
+    border-color: rgba(245, 158, 11, 0.20);
+
+    color: #fcd34d;
+}
+
+.status-confirmed {
+    background: rgba(34, 197, 94, 0.08);
+    border-color: rgba(34, 197, 94, 0.20);
+
+    color: #86efac;
+}
+
+.status-completed {
+    background: rgba(59, 130, 246, 0.08);
+    border-color: rgba(59, 130, 246, 0.20);
+
+    color: #93c5fd;
+}
+
+.status-cancelled {
+    background: rgba(239, 68, 68, 0.08);
+    border-color: rgba(239, 68, 68, 0.20);
+
+    color: #fca5a5;
+}
+
+
+.stat-number {
+    color: #ffffff;
+
+    font-size: 29px;
+    font-weight: 700;
+
+    line-height: 1;
+}
+
+.stat-description {
+    margin-top: 8px;
+
+    color: #607887;
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   CONTENT GRID
+========================================================= */
+
+.content-grid {
+    display: grid;
+
+    grid-template-columns: 2fr 1fr;
+
+    gap: 18px;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   CONTENT CARD
+========================================================= */
+
+.content-card {
+    padding: 22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(12, 32, 51, 0.90),
+            rgba(7, 21, 36, 0.84)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+
+    border-radius: 17px;
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.16);
+}
+
+.content-card h2 {
+    margin-bottom: 8px;
+
+    font-family: 'Playfair Display', serif;
+
+    color: #ffffff;
+
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.content-card p {
+    color: #8299a7;
+
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   QUICK MENU
+========================================================= */
+
+.quick-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    margin-top: 18px;
+}
+
+.quick-menu a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 13px 15px;
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 11px;
+
+    background: rgba(255, 255, 255, 0.025);
+
+    color: #d2e3ea;
+
+    text-decoration: none;
+
+    font-size: 10px;
+    font-weight: 500;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.quick-menu a:hover {
+    background: rgba(0, 217, 255, 0.06);
+    border-color: rgba(0, 217, 255, 0.16);
+
+    color: #7ceaff;
+
+    transform: translateX(2px);
+}
+
+.arrow {
+    color: #63dffb;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   STATUS LIST
+========================================================= */
+
+.status-list {
+    margin-top: 16px;
+}
+
+.status-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 12px 0;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.055);
+}
+
+.status-item:last-child {
+    border-bottom: none;
+}
+
+.status-name {
+    color: #8da3af;
+
+    font-size: 10px;
+}
+
+.status-number {
+    color: #ffffff;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   LATEST BOOKINGS
+========================================================= */
+
+.latest-bookings {
+    padding: 22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(12, 32, 51, 0.94),
+            rgba(7, 21, 36, 0.88)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+
+    border-radius: 17px;
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.18);
+}
+
+.latest-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+
+    margin-bottom: 18px;
+}
+
+.latest-header h2 {
+    font-family: 'Playfair Display', serif;
+
+    color: #ffffff;
+
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.latest-header a {
+    color: #68e5ff;
+
+    text-decoration: none;
+
+    font-size: 10px;
+    font-weight: 500;
+
+    transition: color 0.2s ease;
+}
+
+.latest-header a:hover {
+    color: #ffffff;
+}
+
+
+.table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+
+    border-radius: 13px;
+}
+
+
+/* =========================================================
+   BOOKING TABLE
+========================================================= */
+
+.booking-table {
+    width: 100%;
+    min-width: 900px;
+
+    border-collapse: collapse;
+
+    background: #091a2b;
+
+    border: 1px solid rgba(255, 255, 255, 0.06);
+
+    border-radius: 13px;
+
+    overflow: hidden;
+}
+
+.booking-table thead {
+    background: rgba(0, 217, 255, 0.055);
+}
+
+.booking-table thead th {
+    padding: 14px 15px;
+
+    text-align: left;
+
+    color: #58ddff;
+
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    border-bottom: 1px solid rgba(0, 217, 255, 0.16);
+
+    white-space: nowrap;
+}
+
+.booking-table tbody tr {
+    background: #091a2b;
+
+    transition: background 0.2s ease;
+}
+
+.booking-table tbody tr:hover {
+    background: rgba(0, 217, 255, 0.045);
+}
+
+.booking-table tbody td {
+    padding: 13px 15px;
+
+    color: #d4e2e9;
+
+    font-size: 10px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.055);
+}
+
+.booking-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* BOOKING CODE */
+
+.booking-code {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 5px 9px;
+
+    background: rgba(0, 217, 255, 0.065);
+
+    border: 1px solid rgba(0, 217, 255, 0.16);
+
+    border-radius: 8px;
+
+    color: #74e6ff;
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================================================
+   BOOKING STATUS
+========================================================= */
+
+.booking-status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 78px;
+
+    padding: 5px 9px;
+
+    border-radius: 999px;
+
+    font-size: 9px;
+    font-weight: 600;
+
+    text-transform: capitalize;
+
+    border: 1px solid transparent;
+}
+
+.booking-status.pending {
+    background: rgba(245, 158, 11, 0.08);
+    border-color: rgba(245, 158, 11, 0.20);
+
+    color: #fcd34d;
+}
+
+.booking-status.confirmed {
+    background: rgba(0, 217, 255, 0.08);
+    border-color: rgba(0, 217, 255, 0.18);
+
+    color: #72e7ff;
+}
+
+.booking-status.completed {
+    background: rgba(34, 197, 94, 0.08);
+    border-color: rgba(34, 197, 94, 0.20);
+
+    color: #86efac;
+}
+
+.booking-status.cancelled {
+    background: rgba(239, 68, 68, 0.08);
+    border-color: rgba(239, 68, 68, 0.20);
+
+    color: #fca5a5;
+}
+
+
+/* =========================================================
+   DETAIL BUTTON
+========================================================= */
+
+.detail-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 6px 10px;
+
+    border: 1px solid rgba(0, 217, 255, 0.20);
+    border-radius: 8px;
+
+    background: rgba(0, 217, 255, 0.07);
+
+    color: #70e7ff;
+
+    text-decoration: none;
+
+    font-size: 9px;
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.detail-btn:hover {
+    background: rgba(0, 217, 255, 0.15);
+
+    border-color: rgba(0, 217, 255, 0.38);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   EMPTY
+========================================================= */
+
+.empty-booking {
+    padding: 40px 20px;
+
+    text-align: center;
+
+    color: #66808f;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .sidebar {
+        width: 70px;
+
+        padding: 20px 10px;
+    }
+
+    .logo {
+        padding: 0;
+
+        text-align: center;
+    }
+
+    .logo h2 {
+        font-size: 0;
+    }
+
+    .logo h2::after {
+        content: "OT";
+
+        font-family: 'Montserrat', sans-serif;
+
+        font-size: 20px;
+        font-weight: 700;
+
+        color: #ffffff;
+    }
+
+    .logo span,
+    .menu-title,
+    .menu-text {
+        display: none;
+    }
+
+    .menu a {
+        justify-content: center;
+
+        padding: 12px 8px;
+    }
+
+    .main {
+        width: calc(100% - 70px);
+
+        margin-left: 70px;
+
+        padding: 20px;
+    }
+
+    .topbar {
+        align-items: flex-start;
+    }
+
+    .topbar h1 {
+        font-size: 24px;
+    }
+
+    .admin-profile {
+        padding: 7px;
+    }
+
+    .admin-info {
+        display: none;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .content-card,
+    .latest-bookings {
+        padding: 18px;
+    }
+
+    .latest-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .main {
+        padding: 15px;
+    }
+
+    .topbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .admin-profile {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+/* =========================
+   ACTION BUTTON - DETAIL
+========================= */
+
+.detail-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 13px;
+    background: #111827;
+    color: #ffffff;
+    text-decoration: none;
+    border: 1px solid #111827;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    transition: all 0.2s ease;
+}
+
+.detail-btn:hover {
+    background: #374151;
+    border-color: #374151;
+    color: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: 0 5px 12px rgba(17, 24, 39, 0.15);
+}

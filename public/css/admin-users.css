@@ -1,0 +1,652 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap');
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(0, 217, 255, 0.08),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at bottom right,
+            rgba(0, 119, 182, 0.08),
+            transparent 35%
+        ),
+        #06111f;
+    color: #f4fbff;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.container {
+    width: min(1400px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 42px 0 50px;
+}
+
+
+/* =========================================================
+   ALERT
+========================================================= */
+
+.alert-success {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 22px;
+    padding: 14px 18px;
+
+    background: rgba(34, 197, 94, 0.10);
+    border: 1px solid rgba(34, 197, 94, 0.25);
+    border-radius: 14px;
+
+    color: #86efac;
+    font-size: 12px;
+    font-weight: 500;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.alert-success::before {
+    content: "✓";
+
+    width: 24px;
+    height: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(34, 197, 94, 0.14);
+    color: #4ade80;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+.alert-error {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 22px;
+    padding: 14px 18px;
+
+    background: rgba(239, 68, 68, 0.10);
+    border: 1px solid rgba(239, 68, 68, 0.25);
+    border-radius: 14px;
+
+    color: #fca5a5;
+    font-size: 12px;
+    font-weight: 500;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.alert-error::before {
+    content: "!";
+    
+    width: 24px;
+    height: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(239, 68, 68, 0.14);
+    color: #f87171;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+
+    margin-bottom: 26px;
+}
+
+.header h1 {
+    margin-bottom: 7px;
+
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 600;
+
+    color: #ffffff;
+    letter-spacing: 0.2px;
+}
+
+.header p {
+    color: #8fa6b5;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   HEADER BUTTONS
+========================================================= */
+
+.header-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    text-decoration: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+
+    padding: 11px 18px;
+    border-radius: 12px;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn-add {
+    background: rgba(0, 217, 255, 0.10);
+    border-color: rgba(0, 217, 255, 0.28);
+    color: #7eeaff;
+
+    box-shadow:
+        0 8px 22px rgba(0, 217, 255, 0.08);
+}
+
+.btn-add:hover {
+    background: rgba(0, 217, 255, 0.17);
+    border-color: rgba(0, 217, 255, 0.45);
+
+    box-shadow:
+        0 10px 28px rgba(0, 217, 255, 0.12);
+}
+
+.btn-back {
+    background: rgba(255, 255, 255, 0.035);
+    border-color: rgba(255, 255, 255, 0.10);
+    color: #d7e6ee;
+}
+
+.btn-back:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.16);
+}
+
+
+/* =========================================================
+   MAIN CARD
+========================================================= */
+
+.card {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(12, 32, 51, 0.94),
+            rgba(7, 21, 36, 0.90)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+
+    padding: 24px;
+
+    box-shadow:
+        0 24px 70px rgba(0, 0, 0, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.025);
+
+    overflow-x: auto;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.search-form {
+    display: grid;
+    grid-template-columns: minmax(220px, 1fr) 180px auto auto;
+    gap: 10px;
+
+    margin-bottom: 22px;
+}
+
+.search-form input,
+.search-form select {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 11px;
+
+    background: #0b1728;
+    color: #ffffff;
+
+    outline: none;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.search-form input::placeholder {
+    color: #647b8b;
+}
+
+.search-form input:focus,
+.search-form select:focus {
+    border-color: rgba(0, 217, 255, 0.45);
+
+    box-shadow:
+        0 0 0 3px rgba(0, 217, 255, 0.08);
+
+    background: #0d1b2d;
+}
+
+.search-form select {
+    cursor: pointer;
+    color-scheme: dark;
+}
+
+.search-form select option {
+    background: #0b1728;
+    color: #ffffff;
+}
+
+
+/* SEARCH BUTTON */
+
+.search-form button {
+    min-width: 88px;
+
+    border: 1px solid rgba(0, 217, 255, 0.28);
+    border-radius: 11px;
+
+    background: rgba(0, 217, 255, 0.10);
+    color: #7eeaff;
+
+    padding: 0 18px;
+
+    cursor: pointer;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.search-form button:hover {
+    background: rgba(0, 217, 255, 0.17);
+    border-color: rgba(0, 217, 255, 0.45);
+
+    transform: translateY(-1px);
+}
+
+
+/* RESET */
+
+.search-form a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 78px;
+
+    padding: 0 16px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 11px;
+
+    background: rgba(255, 255, 255, 0.035);
+    color: #b8cbd5;
+
+    text-decoration: none;
+
+    font-size: 11px;
+    font-weight: 500;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.search-form a:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.16);
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+table {
+    width: 100%;
+    min-width: 900px;
+
+    border-collapse: collapse;
+
+    background: #091a2b;
+
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 14px;
+
+    overflow: hidden;
+}
+
+thead {
+    background: rgba(0, 217, 255, 0.055);
+}
+
+th {
+    padding: 15px 16px;
+
+    text-align: left;
+
+    color: #58ddff;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    border-bottom: 1px solid rgba(0, 217, 255, 0.16);
+
+    white-space: nowrap;
+}
+
+td {
+    padding: 14px 16px;
+
+    color: #d4e2e9;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.055);
+}
+
+tbody tr {
+    background: #091a2b;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+tbody tr:hover {
+    background: rgba(0, 217, 255, 0.045);
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   ROLE
+========================================================= */
+
+.role {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 82px;
+
+    padding: 6px 11px;
+
+    border-radius: 999px;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 0.7px;
+    text-transform: capitalize;
+
+    border: 1px solid transparent;
+}
+
+.role.admin {
+    background: rgba(0, 217, 255, 0.08);
+    border-color: rgba(0, 217, 255, 0.20);
+    color: #65e4ff;
+}
+
+.role.karyawan {
+    background: rgba(34, 197, 94, 0.08);
+    border-color: rgba(34, 197, 94, 0.20);
+    color: #86efac;
+}
+
+
+/* =========================================================
+   ACTION
+========================================================= */
+
+.action {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+/* EDIT */
+
+.edit-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 7px 12px;
+
+    border-radius: 9px;
+    border: 1px solid rgba(0, 217, 255, 0.20);
+
+    background: rgba(0, 217, 255, 0.07);
+    color: #70e7ff;
+
+    text-decoration: none;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.edit-btn:hover {
+    background: rgba(0, 217, 255, 0.15);
+    border-color: rgba(0, 217, 255, 0.38);
+
+    transform: translateY(-1px);
+}
+
+
+/* DELETE */
+
+.delete-btn {
+    padding: 7px 12px;
+
+    border-radius: 9px;
+    border: 1px solid rgba(239, 68, 68, 0.20);
+
+    background: rgba(239, 68, 68, 0.07);
+    color: #fca5a5;
+
+    cursor: pointer;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.delete-btn:hover {
+    background: rgba(239, 68, 68, 0.14);
+    border-color: rgba(239, 68, 68, 0.38);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   EMPTY
+========================================================= */
+
+.empty {
+    padding: 46px 20px;
+
+    text-align: center;
+
+    color: #708695;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .container {
+        width: min(100% - 30px, 1400px);
+        padding-top: 28px;
+    }
+
+    .header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .header-buttons {
+        width: 100%;
+    }
+
+    .header-buttons .btn {
+        flex: 1;
+    }
+
+    .search-form {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .search-form button,
+    .search-form a {
+        min-height: 42px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .container {
+        width: calc(100% - 22px);
+        padding: 20px 0 35px;
+    }
+
+    .header h1 {
+        font-size: 26px;
+    }
+
+    .header p {
+        font-size: 12px;
+    }
+
+    .header-buttons {
+        flex-direction: column;
+    }
+
+    .header-buttons .btn {
+        width: 100%;
+    }
+
+    .card {
+        padding: 15px;
+        border-radius: 16px;
+    }
+
+    .search-form {
+        grid-template-columns: 1fr;
+    }
+
+    .search-form button,
+    .search-form a {
+        width: 100%;
+        min-height: 42px;
+    }
+}
